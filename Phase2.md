@@ -7,6 +7,7 @@ From the Kali Linux terminal, I used `smbclient` to simulate an unauthorized sha
 
 ```bash
 smbclient -L //192.168.0.196 -U Pito
+```
 
 This generated an authentication failure on the target machine (NT_STATUS_LOGON_FAILURE).
 
