@@ -3,7 +3,7 @@
 In this phase, I transitioned from setup to active simulation. I launched an authentication attack from the Kali Linux machine against the Windows 10 target and analyzed how the events were captured inside Splunk Enterprise.
 
 ### 1. The Attack Scenario (Kali Linux)
-From the Kali Linux terminal, I used `smbclient` to simulate an unauthorized share enumeration/brute-force attempt using a non-existent account (`fakeuser`):
+From the Kali Linux terminal, I used `smbclient` to simulate an unauthorized share enumeration/brute-force attempt using a non-existent account (`pito`):
 
 ```bash
 smbclient -L //192.168.0.196 -U Pito
