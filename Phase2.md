@@ -39,6 +39,7 @@ This generated an authentication failure on the target machine (NT_STATUS_LOGON_
   SourceNetworkAddress: [Kali_Linux_IP] (The explicit IP of the attacker machine).
 
   LogonType: 3 (Network logon, indicating the attack came over the network, standard for SMB/Shared services).
+  ![image alt](https://github.com/Khalidsh3/Soc-Home-Lab/blob/e4058f167971acb5e56d3eeae824fda21fe3dfad/splunk.png)
 
 ### Phase 2 Takeaway 🧠
   As a SOC Analyst/Detection Engineer, visibility is everything. This phase proved that a SIEM is completely blind without proper Group Policies (GPOs) and Endpoint Auditing Configurations in place.     Hardening the infrastructure to log the right data is the first step of successful threat hunting.
