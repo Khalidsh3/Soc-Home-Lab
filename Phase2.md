@@ -9,9 +9,13 @@
 smbclient -L //192.168.0.196 -U Pito
 ```
 
-This generated an authentication failure on the target machine (NT_STATUS_LOGON_FAILURE).
+
+
 ![image alt](https://github.com/Khalidsh3/Soc-Home-Lab/blob/72cf18754ad4da5740765ce32295e7c0162dbbcc/kali.png)
+
+This generated an authentication failure on the target machine (NT_STATUS_LOGON_FAILURE).
 ---
+
 ### 2. The Defensive Challenge: Missing Logs (Troubleshooting)
   Initially, searching Splunk for index=* "pito" or EventCode=4625 yielded zero results.
 
@@ -24,7 +28,9 @@ This generated an authentication failure on the target machine (NT_STATUS_LOGON_
   Navigated to: Local Policies -> Audit Policy -> Audit logon events.
 
   Enabled auditing for Failure events.
+  
 ---
+
 ### 3. Detection & Analysis (Splunk SIEM)
   After forcing Windows to audit logon failures, I re-ran the attack from Kali. Splunk immediately picked up the logs.
 
@@ -40,6 +46,8 @@ This generated an authentication failure on the target machine (NT_STATUS_LOGON_
 
   LogonType: 3 (Network logon, indicating the attack came over the network, standard for SMB/Shared services).
   ![image alt](https://github.com/Khalidsh3/Soc-Home-Lab/blob/e4058f167971acb5e56d3eeae824fda21fe3dfad/splunk.png)
+  
 ---
+
 ### Phase 2 Takeaway 🧠
   As a SOC Analyst/Detection Engineer, visibility is everything. This phase proved that a SIEM is completely blind without proper Group Policies (GPOs) and Endpoint Auditing Configurations in place.     Hardening the infrastructure to log the right data is the first step of successful threat hunting.
