@@ -11,7 +11,7 @@ smbclient -L //192.168.0.196 -U Pito
 
 This generated an authentication failure on the target machine (NT_STATUS_LOGON_FAILURE).
 
-2. The Defensive Challenge: Missing Logs (Troubleshooting)
+### 2. The Defensive Challenge: Missing Logs (Troubleshooting)
 Initially, searching Splunk for index=* "pito" or EventCode=4625 yielded zero results.
 
 Root Cause Analysis: By default, standard Windows 10 installations do not have strict logon auditing enabled. The OS was throwing away the failure events instead of logging them.
@@ -24,7 +24,7 @@ Navigated to: Local Policies -> Audit Policy -> Audit logon events.
 
 Enabled auditing for Failure events.
 
-3. Detection & Analysis (Splunk SIEM)
+### 3. Detection & Analysis (Splunk SIEM)
 After forcing Windows to audit logon failures, I re-ran the attack from Kali. Splunk immediately picked up the logs.
 
 Splunk Search Query used:
