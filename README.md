@@ -45,6 +45,7 @@ smbclient -L //192.168.0.196 -U Pito
 
 
 ![image alt](https://github.com/Khalidsh3/Soc-Home-Lab/blob/72cf18754ad4da5740765ce32295e7c0162dbbcc/kali.png)
+
 This generated an authentication failure on the target machine (NT_STATUS_LOGON_FAILURE).
 
 ---
